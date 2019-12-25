@@ -19,7 +19,7 @@ final class RootViewController: UIViewController {
 
         // Configure Current View Controller
         currentViewController.view.translatesAutoresizingMaskIntoConstraints = false
-
+        
         return currentViewController
     }()
 
@@ -41,6 +41,9 @@ final class RootViewController: UIViewController {
 
        // Setup Child View Controllers
         setupChildViewControllers()
+        
+        // Fetch Weather Data
+        fetchWeatherData()
     }
     
     // MARK: - Helper Methods
@@ -69,6 +72,23 @@ final class RootViewController: UIViewController {
         // Notify Child View Controller
         currentViewController.didMove(toParent: self)
         weekViewController.didMove(toParent: self)
+    }
+    
+    private func fetchWeatherData() {
+        // Create Base URL
+        
+        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=London&APPID=7d2dd8c9c5578b741c7735ad3f0d39ea&units=imperial") else {
+            return
+        }
+        
+        // Create Data Task
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("Request Did Fail (\(error)")
+            } else if let response = response {
+                print(response)
+            }
+        }.resume()
     }
     
 }
