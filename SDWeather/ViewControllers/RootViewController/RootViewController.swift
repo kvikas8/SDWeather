@@ -74,15 +74,12 @@ final class RootViewController: UIViewController {
         weekViewController.didMove(toParent: self)
     }
     
-    private func fetchWeatherData() {
-        // Create Base URL
-        
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=London&APPID=7d2dd8c9c5578b741c7735ad3f0d39ea&units=imperial") else {
-            return
-        }
-        
+  private func fetchWeatherData() {
+        // Initialize Weather Request
+        let weatherRequest = WeatherRequest(baseUrl: WeatherService.authenticatedBaseUrl, location: Defaults.location)
+
         // Create Data Task
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: weatherRequest.url) { (data, response, error) in
             if let error = error {
                 print("Request Did Fail (\(error)")
             } else if let response = response {
