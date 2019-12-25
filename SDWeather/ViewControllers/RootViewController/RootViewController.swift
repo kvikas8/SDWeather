@@ -95,8 +95,8 @@ final class RootViewController: UIViewController {
             if let _ = error {
                 // Notify User
                 self?.presentAlert(of: .noWeatherDataAvailable)
-            } else if let data = data {
-                print(data)
+            } else if let data = data as? WeatherResponse {
+                print(data.windSpeed)
             } else {
                 // Notify User
                 self?.presentAlert(of: .noWeatherDataAvailable)

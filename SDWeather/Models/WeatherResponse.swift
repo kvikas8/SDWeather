@@ -9,8 +9,8 @@
 import Foundation
 
 struct WeatherResponse: Decodable {
-    let mainConditions: Conditions
-    let wind: Wind
+    fileprivate let mainConditions: Conditions
+   fileprivate let wind: Wind
   
     enum CodingKeys: String, CodingKey {
       case mainConditions = "main"
@@ -19,9 +19,9 @@ struct WeatherResponse: Decodable {
 }
 
 struct Conditions: Decodable {
-    let temperature: Double
-    let temperatureMin: Double
-    let temperatureMax: Double
+   fileprivate let temperature: Double
+   fileprivate let temperatureMin: Double
+   fileprivate let temperatureMax: Double
     
     enum CodingKeys: String, CodingKey {
          case temperature = "temp"
@@ -31,5 +31,23 @@ struct Conditions: Decodable {
 }
 
 struct Wind: Codable {
-    let speed: Date
+    fileprivate let speed: Double
+}
+
+extension WeatherResponse: WeatherData {
+    var temperature: Double {
+        return mainConditions.temperature
+    }
+    
+    var temperatureMin: Double {
+        return mainConditions.temperatureMin
+    }
+    
+    var temperatureMax: Double {
+        return mainConditions.temperatureMax
+    }
+    
+    var windSpeed: Double {
+        return wind.speed
+    }
 }

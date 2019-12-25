@@ -17,7 +17,7 @@ class RootViewModel {
     }
     // MARK: - Type Aliases
     
-    typealias DidFetchWeatherDataCompletion = (WeatherResponse?, WeatherDataError?) -> Void
+    typealias DidFetchWeatherDataCompletion = (WeatherData?, WeatherDataError?) -> Void
     
     // MARK: - Properties
     

@@ -22,6 +22,7 @@
 		4E2D4BAA23B3B505005087F4 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BA923B3B505005087F4 /* URL.swift */; };
 		4E2D4BAD23B3BC97005087F4 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BAC23B3BC97005087F4 /* RootViewModel.swift */; };
 		4E2D4BAF23B3CF86005087F4 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BAE23B3CF86005087F4 /* WeatherResponse.swift */; };
+		4E2D4BB223B3DCE1005087F4 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BB123B3DCE1005087F4 /* WeatherData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		4E2D4BA923B3B505005087F4 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		4E2D4BAC23B3BC97005087F4 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		4E2D4BAE23B3CF86005087F4 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
+		4E2D4BB123B3DCE1005087F4 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		4E2D4B6E23B394DA005087F4 /* SDWeather */ = {
 			isa = PBXGroup;
 			children = (
+				4E2D4BB023B3DCC5005087F4 /* Protocols */,
 				4E2D4BA623B3B38E005087F4 /* Configuration */,
 				4E2D4BA323B3B34A005087F4 /* Models */,
 				4E2D4B8323B39523005087F4 /* ApplicationDelegate */,
@@ -198,6 +201,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		4E2D4BB023B3DCC5005087F4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4E2D4BB123B3DCE1005087F4 /* WeatherData.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -281,6 +292,7 @@
 				4E2D4BAD23B3BC97005087F4 /* RootViewModel.swift in Sources */,
 				4E2D4B9523B398EC005087F4 /* SceneDelegate.swift in Sources */,
 				4E2D4BA223B3A43D005087F4 /* UIStoryboard.swift in Sources */,
+				4E2D4BB223B3DCE1005087F4 /* WeatherData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
