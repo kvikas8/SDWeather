@@ -21,6 +21,7 @@
 		4E2D4BA823B3B3AE005087F4 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BA723B3B3AE005087F4 /* Configuration.swift */; };
 		4E2D4BAA23B3B505005087F4 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BA923B3B505005087F4 /* URL.swift */; };
 		4E2D4BAD23B3BC97005087F4 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BAC23B3BC97005087F4 /* RootViewModel.swift */; };
+		4E2D4BAF23B3CF86005087F4 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BAE23B3CF86005087F4 /* WeatherResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		4E2D4BA723B3B3AE005087F4 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		4E2D4BA923B3B505005087F4 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		4E2D4BAC23B3BC97005087F4 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		4E2D4BAE23B3CF86005087F4 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				4E2D4BA423B3B368005087F4 /* WeatherRequest.swift */,
+				4E2D4BAE23B3CF86005087F4 /* WeatherResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				4E2D4BA023B3A305005087F4 /* UIViewController.swift in Sources */,
 				4E2D4BAA23B3B505005087F4 /* URL.swift in Sources */,
 				4E2D4B9623B398EC005087F4 /* AppDelegate.swift in Sources */,
+				4E2D4BAF23B3CF86005087F4 /* WeatherResponse.swift in Sources */,
 				4E2D4B8723B3968D005087F4 /* RootViewController.swift in Sources */,
 				4E2D4BAD23B3BC97005087F4 /* RootViewModel.swift in Sources */,
 				4E2D4B9523B398EC005087F4 /* SceneDelegate.swift in Sources */,
