@@ -11,7 +11,18 @@ import UIKit
 final class RootViewController: UIViewController {
     
     // MARK: - Properties
+    
+    var viewModel: RootViewModel? {
+        didSet {
+            guard let viewModel = viewModel else {
+                return
+            }
 
+            // Setup View Model
+            setupViewModel(with: viewModel)
+        }
+    }
+    
     private let currentViewController: CurrentViewController = {
         guard let currentViewController = UIStoryboard.main.instantiateViewController(withIdentifier: CurrentViewController.storyboardIdentifier) as? CurrentViewController else {
             fatalError("Unable to Instantiate Current View Controller")
@@ -42,8 +53,6 @@ final class RootViewController: UIViewController {
        // Setup Child View Controllers
         setupChildViewControllers()
         
-        // Fetch Weather Data
-        fetchWeatherData()
     }
     
     // MARK: - Helper Methods
@@ -74,19 +83,16 @@ final class RootViewController: UIViewController {
         weekViewController.didMove(toParent: self)
     }
     
-  private func fetchWeatherData() {
-        // Initialize Weather Request
-        let weatherRequest = WeatherRequest(baseUrl: WeatherService.authenticatedBaseUrl, location: Defaults.location)
-
-        // Create Data Task
-        URLSession.shared.dataTask(with: weatherRequest.url) { (data, response, error) in
-            if let error = error {
-                print("Request Did Fail (\(error)")
-            } else if let response = response {
-                print(response)
-            }
-        }.resume()
-    }
+  private func setupViewModel(with viewModel: RootViewModel) {
+      // Configure View Model
+      viewModel.didFetchWeatherData = { (data, error) in
+          if let error = error {
+              print("Unable to Fetch Weather Data (\(error)")
+          } else if let data = data {
+              print(data)
+          }
+      }
+  }
     
 }
 
