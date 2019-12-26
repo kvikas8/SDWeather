@@ -17,10 +17,9 @@ enum Defaults {
 enum WeatherService {
 
     private static let apiKey = "10bf41f616eb02f9d91dfb54bfded77d"
-    private static let baseUrl = URL(string: "https://api.openweathermap.org/data/2.5/weather?")!
+    private static let baseUrl = URL(string: "https://api.openweathermap.org/data/2.5/forecast?")!
 
     static var authenticatedBaseUrl: URL {
         return baseUrl.appending("APPID", value: apiKey)
     }
-
 }

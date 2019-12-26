@@ -16,19 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // rootVc prior to iOS 13
-        guard #available(iOS 13, *) else {
-            guard let rootViewController = self.window?.rootViewController as? RootViewController else {
-                fatalError("Unexpected Root View Controller")
-            }
-            
-            // Initialize Root View Model
-            let rootViewModel = RootViewModel()
-            
-            // Configure Root View Controller
-            rootViewController.viewModel = rootViewModel
-            return true
-        }
         return true
     }
     

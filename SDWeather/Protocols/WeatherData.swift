@@ -13,5 +13,11 @@ protocol WeatherData {
     var temperatureMin: Double { get }
     var temperatureMax: Double { get }
     var windSpeed: Double { get }
+    var time: Date { get }
+    var simplifiedDate: String { get }
+    var description: String { get }
 }
   
+protocol ForecastWeatherData {
+     var daily: [WeatherData] { get }
+}
