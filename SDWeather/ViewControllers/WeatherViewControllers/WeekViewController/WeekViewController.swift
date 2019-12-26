@@ -12,9 +12,11 @@ class WeekViewController: UIViewController {
     
     // MARK: - Types
     
-    private enum AlertType {
-        case noWeatherDataAvailable
-    }
+     private enum AlertType {
+           case notAuthorizedToRequestLocation
+           case failedToRequestLocation
+           case noWeatherDataAvailable
+       }
     
     // MARK: - Properties
     
@@ -77,24 +79,32 @@ class WeekViewController: UIViewController {
     private func setupViewModel(with viewModel: WeekViewModel) {
         
         // Configure View Model
-        viewModel.didFetchWeatherData = { [weak self] (weatherData, error) in
+        viewModel.didFetchWeatherData = { [weak self] (result) in
             // Hide Activity Indicator View
             DispatchQueue.main.sync {
                 self?.activityIndicatorView.stopAnimating() }
             
-            if let _ = error {
-                // Notify User
-                self?.presentAlert(of: .noWeatherDataAvailable)
-            } else if let _ = weatherData {
-                // Initialize Week View Model
+            switch result {
+            case .success(_):
                 DispatchQueue.main.sync {
-                    // Update Table View
-                    self?.tableView.reloadData()
-                    self?.tableView.isHidden = false
+                                   // Update Table View
+                                   self?.tableView.reloadData()
+                                   self?.tableView.isHidden = false
+                               }
+            case .failure(let error):
+                let alertType: AlertType
+
+                switch error {
+                case .notAuthorizedToRequestLocation:
+                    alertType = .notAuthorizedToRequestLocation
+                case .failedToRequestLocation:
+                    alertType = .failedToRequestLocation
+                case .noWeatherDataAvailable:
+                    alertType = .noWeatherDataAvailable
                 }
-            } else {
+
                 // Notify User
-                self?.presentAlert(of: .noWeatherDataAvailable)
+                self?.presentAlert(of: alertType)
             }
         }
         
@@ -108,22 +118,26 @@ class WeekViewController: UIViewController {
         let message: String
         
         switch alertType {
+        case .notAuthorizedToRequestLocation:
+            title = "Unable to Fetch Weather Data for Your Location"
+            message = "Rainstorm is not authorized to access your current location. This means it's unable to show you the weather for your current location. You can grant Rainstorm access to your current location in the Settings application."
+        case .failedToRequestLocation:
+            title = "Unable to Fetch Weather Data for Your Location"
+            message = "Rainstorm is not able to fetch your current location due to a technical issue."
         case .noWeatherDataAvailable:
             title = "Unable to Fetch Weather Data"
             message = "The application is unable to fetch weather data. Please make sure your device is connected over Wi-Fi or cellular."
         }
-        DispatchQueue.main.sync {
-            // Initialize Alert Controller
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            
-            // Add Cancel Action
-            let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(cancelAction)
-            
-            // Present Alert Controller
-            self.present(alertController, animated: true)
-            
-        }
+        
+        // Initialize Alert Controller
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        // Add Cancel Action
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        // Present Alert Controller
+        present(alertController, animated: true)
     }
 }
 

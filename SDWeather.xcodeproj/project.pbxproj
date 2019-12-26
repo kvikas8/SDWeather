@@ -28,7 +28,24 @@
 		4E2D4BBC23B3FEFE005087F4 /* WeekDayRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BBB23B3FEFE005087F4 /* WeekDayRepresentable.swift */; };
 		4E2D4BBF23B3FF88005087F4 /* WeekDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BBE23B3FF88005087F4 /* WeekDayTableViewCell.swift */; };
 		4E2D4BC123B41929005087F4 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BC023B41929005087F4 /* Array.swift */; };
+		4E2D4BD523B45669005087F4 /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BD423B45669005087F4 /* XCTest.swift */; };
+		4E2D4BD723B45700005087F4 /* forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E2D4BD623B456FF005087F4 /* forecast.json */; };
+		4E2D4BD923B45762005087F4 /* WeekViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BD823B45762005087F4 /* WeekViewModelTests.swift */; };
+		4E2D4BDB23B460C1005087F4 /* WeekDayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BDA23B460C1005087F4 /* WeekDayViewModelTests.swift */; };
+		4E2D4BDD23B467F6005087F4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BDC23B467F6005087F4 /* Location.swift */; };
+		4E2D4BDF23B4688A005087F4 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BDE23B4688A005087F4 /* LocationService.swift */; };
+		4E2D4BE223B46903005087F4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BE123B46903005087F4 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4E2D4BCB23B455A9005087F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E2D4B6423B394DA005087F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E2D4B6B23B394DA005087F4;
+			remoteInfo = SDWeather;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4E2D4B6C23B394DA005087F4 /* SDWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,10 +71,26 @@
 		4E2D4BBB23B3FEFE005087F4 /* WeekDayRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayRepresentable.swift; sourceTree = "<group>"; };
 		4E2D4BBE23B3FF88005087F4 /* WeekDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayTableViewCell.swift; sourceTree = "<group>"; };
 		4E2D4BC023B41929005087F4 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		4E2D4BC623B455A9005087F4 /* SDWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E2D4BCA23B455A9005087F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E2D4BD423B45669005087F4 /* XCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
+		4E2D4BD623B456FF005087F4 /* forecast.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = forecast.json; sourceTree = "<group>"; };
+		4E2D4BD823B45762005087F4 /* WeekViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekViewModelTests.swift; sourceTree = "<group>"; };
+		4E2D4BDA23B460C1005087F4 /* WeekDayViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayViewModelTests.swift; sourceTree = "<group>"; };
+		4E2D4BDC23B467F6005087F4 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		4E2D4BDE23B4688A005087F4 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		4E2D4BE123B46903005087F4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4E2D4B6923B394DA005087F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E2D4BC323B455A9005087F4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -71,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				4E2D4B6E23B394DA005087F4 /* SDWeather */,
+				4E2D4BC723B455A9005087F4 /* SDWeatherTests */,
 				4E2D4B6D23B394DA005087F4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				4E2D4B6C23B394DA005087F4 /* SDWeather.app */,
+				4E2D4BC623B455A9005087F4 /* SDWeatherTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +121,7 @@
 		4E2D4B6E23B394DA005087F4 /* SDWeather */ = {
 			isa = PBXGroup;
 			children = (
+				4E2D4BE023B468F6005087F4 /* Managers */,
 				4E2D4BB023B3DCC5005087F4 /* Protocols */,
 				4E2D4BA623B3B38E005087F4 /* Configuration */,
 				4E2D4BA323B3B34A005087F4 /* Models */,
@@ -194,6 +230,7 @@
 			children = (
 				4E2D4BA423B3B368005087F4 /* WeatherRequest.swift */,
 				4E2D4BAE23B3CF86005087F4 /* WeatherResponse.swift */,
+				4E2D4BDC23B467F6005087F4 /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -211,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				4E2D4BB123B3DCE1005087F4 /* WeatherData.swift */,
+				4E2D4BDE23B4688A005087F4 /* LocationService.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -240,6 +278,58 @@
 			path = TableViewCells;
 			sourceTree = "<group>";
 		};
+		4E2D4BC723B455A9005087F4 /* SDWeatherTests */ = {
+			isa = PBXGroup;
+			children = (
+				4E2D4BD323B45647005087F4 /* Extensions */,
+				4E2D4BD223B45620005087F4 /* Stubs */,
+				4E2D4BD123B45616005087F4 /* TestCases */,
+				4E2D4BD023B455C0005087F4 /* SupportingFiles */,
+			);
+			path = SDWeatherTests;
+			sourceTree = "<group>";
+		};
+		4E2D4BD023B455C0005087F4 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4E2D4BCA23B455A9005087F4 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		4E2D4BD123B45616005087F4 /* TestCases */ = {
+			isa = PBXGroup;
+			children = (
+				4E2D4BD823B45762005087F4 /* WeekViewModelTests.swift */,
+				4E2D4BDA23B460C1005087F4 /* WeekDayViewModelTests.swift */,
+			);
+			path = TestCases;
+			sourceTree = "<group>";
+		};
+		4E2D4BD223B45620005087F4 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				4E2D4BD623B456FF005087F4 /* forecast.json */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		4E2D4BD323B45647005087F4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4E2D4BD423B45669005087F4 /* XCTest.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4E2D4BE023B468F6005087F4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4E2D4BE123B46903005087F4 /* LocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,6 +350,24 @@
 			productReference = 4E2D4B6C23B394DA005087F4 /* SDWeather.app */;
 			productType = "com.apple.product-type.application";
 		};
+		4E2D4BC523B455A9005087F4 /* SDWeatherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E2D4BCD23B455A9005087F4 /* Build configuration list for PBXNativeTarget "SDWeatherTests" */;
+			buildPhases = (
+				4E2D4BC223B455A9005087F4 /* Sources */,
+				4E2D4BC323B455A9005087F4 /* Frameworks */,
+				4E2D4BC423B455A9005087F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E2D4BCC23B455A9005087F4 /* PBXTargetDependency */,
+			);
+			name = SDWeatherTests;
+			productName = SDWeatherTests;
+			productReference = 4E2D4BC623B455A9005087F4 /* SDWeatherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -272,6 +380,11 @@
 				TargetAttributes = {
 					4E2D4B6B23B394DA005087F4 = {
 						CreatedOnToolsVersion = 11.3;
+					};
+					4E2D4BC523B455A9005087F4 = {
+						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
+						TestTargetID = 4E2D4B6B23B394DA005087F4;
 					};
 				};
 			};
@@ -289,6 +402,7 @@
 			projectRoot = "";
 			targets = (
 				4E2D4B6B23B394DA005087F4 /* SDWeather */,
+				4E2D4BC523B455A9005087F4 /* SDWeatherTests */,
 			);
 		};
 /* End PBXProject section */
@@ -304,6 +418,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4E2D4BC423B455A9005087F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E2D4BD723B45700005087F4 /* forecast.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -313,6 +435,7 @@
 			files = (
 				4E2D4BA523B3B368005087F4 /* WeatherRequest.swift in Sources */,
 				4E2D4B9D23B3A2A0005087F4 /* WeekViewController.swift in Sources */,
+				4E2D4BDF23B4688A005087F4 /* LocationService.swift in Sources */,
 				4E2D4B9B23B3A290005087F4 /* CurrentViewController.swift in Sources */,
 				4E2D4BA823B3B3AE005087F4 /* Configuration.swift in Sources */,
 				4E2D4BA023B3A305005087F4 /* UIViewController.swift in Sources */,
@@ -325,14 +448,34 @@
 				4E2D4B8723B3968D005087F4 /* RootViewController.swift in Sources */,
 				4E2D4BBF23B3FF88005087F4 /* WeekDayTableViewCell.swift in Sources */,
 				4E2D4B9523B398EC005087F4 /* SceneDelegate.swift in Sources */,
+				4E2D4BDD23B467F6005087F4 /* Location.swift in Sources */,
 				4E2D4BA223B3A43D005087F4 /* UIStoryboard.swift in Sources */,
+				4E2D4BE223B46903005087F4 /* LocationManager.swift in Sources */,
 				4E2D4BB523B3F108005087F4 /* WeekViewModel.swift in Sources */,
 				4E2D4BBC23B3FEFE005087F4 /* WeekDayRepresentable.swift in Sources */,
 				4E2D4BB223B3DCE1005087F4 /* WeatherData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4E2D4BC223B455A9005087F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E2D4BDB23B460C1005087F4 /* WeekDayViewModelTests.swift in Sources */,
+				4E2D4BD923B45762005087F4 /* WeekViewModelTests.swift in Sources */,
+				4E2D4BD523B45669005087F4 /* XCTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4E2D4BCC23B455A9005087F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E2D4B6B23B394DA005087F4 /* SDWeather */;
+			targetProxy = 4E2D4BCB23B455A9005087F4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4E2D4B7E23B394DD005087F4 /* Debug */ = {
@@ -485,6 +628,47 @@
 			};
 			name = Release;
 		};
+		4E2D4BCE23B455A9005087F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SDWeatherTests/SupportingFiles/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.SDWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SDWeather.app/SDWeather";
+			};
+			name = Debug;
+		};
+		4E2D4BCF23B455A9005087F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SDWeatherTests/SupportingFiles/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.SDWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SDWeather.app/SDWeather";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -502,6 +686,15 @@
 			buildConfigurations = (
 				4E2D4B8123B394DD005087F4 /* Debug */,
 				4E2D4B8223B394DD005087F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E2D4BCD23B455A9005087F4 /* Build configuration list for PBXNativeTarget "SDWeatherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E2D4BCE23B455A9005087F4 /* Debug */,
+				4E2D4BCF23B455A9005087F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

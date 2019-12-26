@@ -10,28 +10,58 @@ import Foundation
 // MARK: - Types
 
 enum WeatherDataError: Error {
-    case noWeatherDataAvailable
-}
+       case notAuthorizedToRequestLocation
+       case failedToRequestLocation
+       case noWeatherDataAvailable
+   }
+
+enum WeatherDataResult {
+       case success(ForecastWeatherData)
+       case failure(WeatherDataError)
+   }
+
 // MARK: - Type Aliases
 
-typealias DidFetchWeatherDataCompletion = (ForecastWeatherData?, WeatherDataError?) -> Void
+typealias FetchWeatherDataCompletion = (WeatherDataResult) -> Void
 
 
 
 class WeekViewModel {
     
-    // MARK: - Initialization
-    init() {
-        // Fetch Weather Data
-        fetchWeatherData()
+    private let locationService: LocationService?
+       
+       // MARK: - Initialization
+       
+       init(locationService: LocationService) {
+           // Set Location Service
+           self.locationService = locationService
+           
+         //  super.init()
+           
+           // Fetch Weather Data
+           fetchWeatherData(for: Defaults.location)
+           
+           // Fetch Location
+           fetchLocation()
+       }
+    
+    init(weatherData: [WeatherData]) {
+        self.weatherData = weatherData
+        self.locationService = nil
+        let groupedDictionary = Dictionary(grouping: weatherData, by: { $0.simplifiedDate })
+        self.clubbedData = groupedDictionary.compactMap { (arg0) -> ClubbedWeatherData? in
+            let (key, value) = arg0
+            return ClubbedWeatherData(date: key, hourly: value)
+        }
     }
     
     // MARK: - Properties
-    var didFetchWeatherData: DidFetchWeatherDataCompletion?
+    var didFetchWeatherData: FetchWeatherDataCompletion?
     
     private var clubbedData: [ClubbedWeatherData]?
     
     var weatherData: [WeatherData]?
+    
     
     // MARK: -
     
@@ -41,7 +71,23 @@ class WeekViewModel {
     
     // MARK: - Helper Methods
     
-    private func fetchWeatherData() {
+    private func fetchLocation() {
+        locationService?.fetchLocation { [weak self] (result) in
+            switch result {
+            case .success(let location):
+                // Fetch Weather Data
+                self?.fetchWeatherData(for: location)
+            case .failure(let error):
+                print("Unable to Fetch Location (\(error))")
+                let result: WeatherDataResult = .failure(.notAuthorizedToRequestLocation)
+                // Invoke Completion Handler
+               self?.didFetchWeatherData?(result)
+                
+            }
+        }
+    }
+    
+   private func fetchWeatherData(for location: Location) {
         // Initialize Weather Request
         let weatherRequest = WeatherRequest(baseUrl: WeatherService.authenticatedBaseUrl, location: Defaults.location)
         
@@ -54,7 +100,10 @@ class WeekViewModel {
             if let error = error {
                 print("Unable to Fetch Weather Data \(error)")
                 
-                self?.didFetchWeatherData?(nil, .noWeatherDataAvailable)
+                let result: WeatherDataResult = .failure(.noWeatherDataAvailable)
+
+                               // Invoke Completion Handler
+                               self?.didFetchWeatherData?(result)
             } else if let data = data {
                 // Initialize JSON Decoder
                 let decoder = JSONDecoder()
@@ -64,15 +113,24 @@ class WeekViewModel {
                     let weatherResponse = try decoder.decode(ForecastWeatherResponse.self, from: data)
                     self?.setUp(weatherData: weatherResponse.daily)
                     // Invoke Completion Handler
-                    self?.didFetchWeatherData?(weatherResponse, nil)
+                   let result: WeatherDataResult = .success(weatherResponse)
+
+                    // Invoke Completion Handler
+                    self?.didFetchWeatherData?(result)
                 } catch {
                     print("Unable to Decode JSON Response \(error)")
                     
                     // Invoke Completion Handler
-                    self?.didFetchWeatherData?(nil, .noWeatherDataAvailable)
+                   let result: WeatherDataResult = .failure(.noWeatherDataAvailable)
+
+                                   // Invoke Completion Handler
+                                   self?.didFetchWeatherData?(result)
                 }
             } else {
-                self?.didFetchWeatherData?(nil, .noWeatherDataAvailable)
+                let result: WeatherDataResult = .failure(.noWeatherDataAvailable)
+
+                               // Invoke Completion Handler
+                               self?.didFetchWeatherData?(result)
             }
         }.resume()
     }

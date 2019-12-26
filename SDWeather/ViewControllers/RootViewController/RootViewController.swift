@@ -41,7 +41,7 @@ final class RootViewController: UIViewController {
     }
     
     @IBAction func step2(_ sender: Any) {
-        let weekViewModel = WeekViewModel()
+        let weekViewModel = WeekViewModel(locationService: LocationManager())
         
         // Configure Week View Controller
         weekViewController.viewModel = weekViewModel
