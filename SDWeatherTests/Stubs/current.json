@@ -1,0 +1,33 @@
+{
+     "dt": 1485799200,
+     "main": {
+       "temp": 283.76,
+       "temp_min": 283.76,
+       "temp_max": 283.761,
+       "pressure": 1017.24,
+       "sea_level": 1026.83,
+       "grnd_level": 1017.24,
+       "humidity": 100,
+       "temp_kf": 0
+     },
+     "weather": [
+       {
+         "id": 800,
+         "main": "Clear",
+         "description": "clear sky",
+         "icon": "01n"
+       }
+     ],
+     "clouds": {
+       "all": 0
+     },
+     "wind": {
+       "speed": 7.27,
+       "deg": 15.0048
+     },
+     "rain": {},
+     "sys": {
+       "pod": "n"
+     },
+     "dt_txt": "2017-01-30 18:00:00"
+   }

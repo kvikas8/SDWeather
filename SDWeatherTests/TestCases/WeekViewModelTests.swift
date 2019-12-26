@@ -62,16 +62,6 @@ class WeekViewModelTests: XCTestCase {
         XCTAssertEqual(weekDayViewModel.temperature, "283.8 °F - 283.8 °F")
         XCTAssertEqual(weekDayViewModel.windSpeed, "7 MPH")
         XCTAssertEqual(weekDayViewModel.description, "clear sky")
-      
-    }
-    
-    
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
 
 }
