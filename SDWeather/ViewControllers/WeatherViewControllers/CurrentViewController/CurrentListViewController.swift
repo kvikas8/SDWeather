@@ -43,10 +43,6 @@ class CurrentListViewController: UITableViewController, AddWeatherDelegate {
         
         // Configure View Model
         viewModel.didFetchWeatherData = { [weak self] (result) in
-            // Hide Activity Indicator View
-            //            DispatchQueue.main.sync {
-            //                self?.activityIndicatorView.stopAnimating() }
-            
             switch result {
             case .success(_):
                 DispatchQueue.main.sync {
@@ -80,6 +76,7 @@ class CurrentListViewController: UITableViewController, AddWeatherDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        
         if segue.identifier == "AddCityViewController" {
             
             prepareSegueForAddWeatherCityViewController(segue: segue)
@@ -90,7 +87,11 @@ class CurrentListViewController: UITableViewController, AddWeatherDelegate {
     
     private func prepareSegueForAddWeatherCityViewController(segue: UIStoryboardSegue) {
         
-        guard let addWeatherCityVC = segue.destination as? AddCityViewController else {
+        guard let nav = segue.destination as? UINavigationController else {
+                   fatalError("NavigationController not found")
+               }
+        
+        guard let addWeatherCityVC = nav.viewControllers.first as? AddCityViewController else {
             fatalError("AddCityViewController not found")
         }
         
