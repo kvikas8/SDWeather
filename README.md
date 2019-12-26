@@ -15,13 +15,12 @@ git clone https://github.com/kvikas8/SDWeather.git
 - Simply press **Command + U** or select **Product > Test** from Xcode Menu to run tests.
 - To see the code coverage report, run the test suite and open the **Report Navigator** on the left, select the report for the last test run, and open the **Coverage** tab at the top.
 - Below is the screenshot of latest **Coverage**
+![ScreenShot](https://github.com/kvikas8/SDWeather/blob/stImages/Coverage.png)
 
 ## Notes
 - App only support portrait mode for now.
 - App is only tested in iOS (iPhone 11 Simulator) due to time constraint.
 - App will accept city one by one as of now. Support for accepting comma seperated cities is not developed due to time constraint.
-
-![ScreenShot](https://github.com/kvikas8/SDWeather/blob/stImages/Coverage.png)
 
 ## Needed Improvements
 - UIEnhancements
