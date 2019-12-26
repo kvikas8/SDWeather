@@ -47,5 +47,5 @@ class WeekDayViewModelTests: XCTestCase {
     func testDescription() {
            XCTAssertEqual(viewModel.description, "clear sky")
        }
-
+    
 }

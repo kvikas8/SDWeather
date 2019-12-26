@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4E08F31423B511930048E5A5 /* MockLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08F31323B511930048E5A5 /* MockLocationService.swift */; };
+		4E08F31823B51D020048E5A5 /* WeekViewModelAsyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08F31723B51D020048E5A5 /* WeekViewModelAsyncTests.swift */; };
+		4E08F31A23B521660048E5A5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08F31923B521660048E5A5 /* NetworkService.swift */; };
+		4E08F31C23B5219D0048E5A5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08F31B23B5219D0048E5A5 /* NetworkManager.swift */; };
+		4E08F31E23B523AB0048E5A5 /* MockNetworkService.swift..swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08F31D23B523AB0048E5A5 /* MockNetworkService.swift..swift */; };
+		4E08F32023B536FA0048E5A5 /* CurrentListViewModelAsyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08F31F23B536FA0048E5A5 /* CurrentListViewModelAsyncTests.swift */; };
 		4E2D4B7923B394DD005087F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E2D4B7823B394DD005087F4 /* Assets.xcassets */; };
 		4E2D4B8723B3968D005087F4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4B8623B3968D005087F4 /* RootViewController.swift */; };
 		4E2D4B8D23B3980B005087F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E2D4B8B23B3980B005087F4 /* Main.storyboard */; };
@@ -28,7 +33,6 @@
 		4E2D4BB923B3FDD4005087F4 /* WeekDayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BB823B3FDD4005087F4 /* WeekDayViewModel.swift */; };
 		4E2D4BBC23B3FEFE005087F4 /* WeekDayRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BBB23B3FEFE005087F4 /* WeekDayRepresentable.swift */; };
 		4E2D4BBF23B3FF88005087F4 /* WeekDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BBE23B3FF88005087F4 /* WeekDayTableViewCell.swift */; };
-		4E2D4BC123B41929005087F4 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BC023B41929005087F4 /* Array.swift */; };
 		4E2D4BD523B45669005087F4 /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BD423B45669005087F4 /* XCTest.swift */; };
 		4E2D4BD723B45700005087F4 /* forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E2D4BD623B456FF005087F4 /* forecast.json */; };
 		4E2D4BD923B45762005087F4 /* WeekViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BD823B45762005087F4 /* WeekViewModelTests.swift */; };
@@ -55,6 +59,11 @@
 
 /* Begin PBXFileReference section */
 		4E08F31323B511930048E5A5 /* MockLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationService.swift; sourceTree = "<group>"; };
+		4E08F31723B51D020048E5A5 /* WeekViewModelAsyncTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekViewModelAsyncTests.swift; sourceTree = "<group>"; };
+		4E08F31923B521660048E5A5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		4E08F31B23B5219D0048E5A5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		4E08F31D23B523AB0048E5A5 /* MockNetworkService.swift..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift..swift; sourceTree = "<group>"; };
+		4E08F31F23B536FA0048E5A5 /* CurrentListViewModelAsyncTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentListViewModelAsyncTests.swift; sourceTree = "<group>"; };
 		4E2D4B6C23B394DA005087F4 /* SDWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E2D4B7823B394DD005087F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E2D4B7D23B394DD005087F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,7 +86,6 @@
 		4E2D4BB823B3FDD4005087F4 /* WeekDayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayViewModel.swift; sourceTree = "<group>"; };
 		4E2D4BBB23B3FEFE005087F4 /* WeekDayRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayRepresentable.swift; sourceTree = "<group>"; };
 		4E2D4BBE23B3FF88005087F4 /* WeekDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayTableViewCell.swift; sourceTree = "<group>"; };
-		4E2D4BC023B41929005087F4 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		4E2D4BC623B455A9005087F4 /* SDWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E2D4BCA23B455A9005087F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E2D4BD423B45669005087F4 /* XCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
@@ -116,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				4E08F31323B511930048E5A5 /* MockLocationService.swift */,
+				4E08F31D23B523AB0048E5A5 /* MockNetworkService.swift..swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -243,7 +252,6 @@
 				4E2D4B9F23B3A305005087F4 /* UIViewController.swift */,
 				4E2D4BA123B3A43D005087F4 /* UIStoryboard.swift */,
 				4E2D4BA923B3B505005087F4 /* URL.swift */,
-				4E2D4BC023B41929005087F4 /* Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -272,6 +280,7 @@
 			children = (
 				4E2D4BB123B3DCE1005087F4 /* WeatherData.swift */,
 				4E2D4BDE23B4688A005087F4 /* LocationService.swift */,
+				4E08F31923B521660048E5A5 /* NetworkService.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -327,6 +336,8 @@
 				4E2D4BD823B45762005087F4 /* WeekViewModelTests.swift */,
 				4E2D4BDA23B460C1005087F4 /* WeekDayViewModelTests.swift */,
 				4E2D4BEF23B4A45D005087F4 /* CurrentListViewModelTest.swift */,
+				4E08F31723B51D020048E5A5 /* WeekViewModelAsyncTests.swift */,
+				4E08F31F23B536FA0048E5A5 /* CurrentListViewModelAsyncTests.swift */,
 			);
 			path = TestCases;
 			sourceTree = "<group>";
@@ -352,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				4E2D4BE123B46903005087F4 /* LocationManager.swift */,
+				4E08F31B23B5219D0048E5A5 /* NetworkManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -489,14 +501,15 @@
 				4E2D4BDF23B4688A005087F4 /* LocationService.swift in Sources */,
 				4E2D4B9B23B3A290005087F4 /* CurrentListViewController.swift in Sources */,
 				4E2D4BE523B477A5005087F4 /* CurrentListViewModel.swift in Sources */,
+				4E08F31A23B521660048E5A5 /* NetworkService.swift in Sources */,
 				4E2D4BA823B3B3AE005087F4 /* Configuration.swift in Sources */,
 				4E2D4BA023B3A305005087F4 /* UIViewController.swift in Sources */,
 				4E2D4BAA23B3B505005087F4 /* URL.swift in Sources */,
 				4E2D4BB723B3F8ED005087F4 /* Styles.swift in Sources */,
+				4E08F31C23B5219D0048E5A5 /* NetworkManager.swift in Sources */,
 				4E2D4BB923B3FDD4005087F4 /* WeekDayViewModel.swift in Sources */,
 				4E2D4BE823B47949005087F4 /* AddCityViewController.swift in Sources */,
 				4E2D4B9623B398EC005087F4 /* AppDelegate.swift in Sources */,
-				4E2D4BC123B41929005087F4 /* Array.swift in Sources */,
 				4E2D4BAF23B3CF86005087F4 /* WeatherResponse.swift in Sources */,
 				4E2D4BEB23B47CFC005087F4 /* CurrentWeatherCell.swift in Sources */,
 				4E2D4B8723B3968D005087F4 /* RootViewController.swift in Sources */,
@@ -515,9 +528,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E08F31E23B523AB0048E5A5 /* MockNetworkService.swift..swift in Sources */,
 				4E2D4BF023B4A45D005087F4 /* CurrentListViewModelTest.swift in Sources */,
 				4E08F31423B511930048E5A5 /* MockLocationService.swift in Sources */,
+				4E08F32023B536FA0048E5A5 /* CurrentListViewModelAsyncTests.swift in Sources */,
 				4E2D4BDB23B460C1005087F4 /* WeekDayViewModelTests.swift in Sources */,
+				4E08F31823B51D020048E5A5 /* WeekViewModelAsyncTests.swift in Sources */,
 				4E2D4BD923B45762005087F4 /* WeekViewModelTests.swift in Sources */,
 				4E2D4BD523B45669005087F4 /* XCTest.swift in Sources */,
 			);

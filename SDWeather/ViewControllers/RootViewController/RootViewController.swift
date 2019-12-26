@@ -34,14 +34,14 @@ final class RootViewController: UIViewController {
     }
     
     @IBAction func step1(_ sender: Any) {
-        let currentListViewModel = CurrentListViewModel()
+        let currentListViewModel = CurrentListViewModel(networkService: NetworkManager())
         // Configure Week View Controller
         addcityViewController.currentListViewModel = currentListViewModel
         self.navigationController?.pushViewController(addcityViewController, animated: true)
     }
     
     @IBAction func step2(_ sender: Any) {
-        let weekViewModel = WeekViewModel(locationService: LocationManager())
+        let weekViewModel = WeekViewModel(networkService: NetworkManager(), locationService: LocationManager())
         
         // Configure Week View Controller
         weekViewController.viewModel = weekViewModel

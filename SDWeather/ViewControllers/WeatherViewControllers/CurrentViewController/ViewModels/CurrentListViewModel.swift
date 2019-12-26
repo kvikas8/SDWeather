@@ -20,10 +20,18 @@ typealias CurrentWeatherDataCompletion = (CurrentWeatherDataResult) -> Void
 class CurrentListViewModel {
     
     // MARK: - Properties
+    private let networkService: NetworkService?
+  
     var didFetchWeatherData: CurrentWeatherDataCompletion?
     
     var workDayViewModels: [WeekDayViewModel] = []
     
+    
+    // MARK: - Initializers
+    
+    init(networkService: NetworkService) {
+        self.networkService = networkService
+    }
     
     func addWeatherViewModel(for city: String) {
          fetchWeatherData(for: city)
@@ -34,7 +42,7 @@ class CurrentListViewModel {
         let weatherRequest = CurrentWeatherRequest.init(baseUrl: WeatherService.authenticatedCurrentBaseUrl, city: city)
         
         // Create Data Task
-        URLSession.shared.dataTask(with: weatherRequest.url) { [weak self] (data, response, error) in
+         networkService?.fetchData(with: weatherRequest.url) { [weak self] (data, response, error) in
             if let response = response as? HTTPURLResponse {
                 print("Status Code: \(response.statusCode)")
             }
@@ -73,7 +81,7 @@ class CurrentListViewModel {
                                // Invoke Completion Handler
                                self?.didFetchWeatherData?(result)
             }
-        }.resume()
+        }
     }
     
     func numberOfRows(_ section: Int) -> Int {

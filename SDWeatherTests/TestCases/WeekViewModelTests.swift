@@ -25,6 +25,7 @@ class WeekViewModelTests: XCTestCase {
         // Initialize Dark Sky Response
         let weatherResponse = try! decoder.decode(ForecastWeatherResponse.self, from: data)
         viewModel = WeekViewModel(weatherData: weatherResponse.daily)
+        
     }
 
     override func tearDown() {

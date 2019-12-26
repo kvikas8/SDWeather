@@ -13,7 +13,7 @@ class MockLocationService: LocationService {
 
     // MARK: - Properties
 
-    var location: Location = Location(latitude: 0.0, longitude: 0.0)
+    var location: Location? = Location(latitude: 0.0, longitude: 0.0)
 
     // MARK: -
 
@@ -22,8 +22,15 @@ class MockLocationService: LocationService {
     // MARK: - Location Service
 
     func fetchLocation(completion: @escaping LocationService.FetchLocationCompletion) {
+    
         // Create Result
-        let result: LocationServiceResult = .success(location)
+        let result: LocationServiceResult
+        
+        if let location = location {
+            result = .success(location)
+        } else {
+            result = .failure(.notAuthorizedToRequestLocation)
+        }
 
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             // Invoke Handler

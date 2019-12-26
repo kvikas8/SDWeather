@@ -29,28 +29,26 @@ typealias FetchWeatherDataCompletion = (WeatherDataResult) -> Void
 class WeekViewModel {
     
     private let locationService: LocationService?
-    
+    private let networkService: NetworkService?
     // MARK: - Initialization
     
-    init(locationService: LocationService) {
-        // Set Location Service
+    init(networkService: NetworkService, locationService: LocationService) {
+    // Set Services
+        self.networkService = networkService
         self.locationService = locationService
+        
     }
     
     init(weatherData: [WeatherData]) {
-        self.weatherData = weatherData
         self.locationService = nil
-        let groupedDictionary = Dictionary(grouping: weatherData, by: { $0.simplifiedDate })
-        self.clubbedData = groupedDictionary.compactMap { (arg0) -> ClubbedWeatherData? in
-            let (key, value) = arg0
-            return ClubbedWeatherData(date: key, hourly: value)
-        }
+        self.networkService = nil
+        self.setUp(weatherData: weatherData)
     }
     
     // MARK: - Properties
     var didFetchWeatherData: FetchWeatherDataCompletion?
     
-    private var clubbedData: [ClubbedWeatherData]?
+    private var clubbedData: [ClubbedWeatherData] = []
     
     var weatherData: [WeatherData]?
     
@@ -58,7 +56,7 @@ class WeekViewModel {
     // MARK: -
     
     var numberOfSections: Int {
-        return clubbedData?.count ?? 0
+        return clubbedData.count
     }
     
     // MARK: - Helper Methods
@@ -93,7 +91,7 @@ class WeekViewModel {
         let weatherRequest = ForeCastWeatherRequest(baseUrl: WeatherService.authenticatedForcastBaseUrl, location: Defaults.location)
         
         // Create Data Task
-        URLSession.shared.dataTask(with: weatherRequest.url) { [weak self] (data, response, error) in
+        networkService?.fetchData(with: weatherRequest.url) { [weak self] (data, response, error) in
             if let response = response as? HTTPURLResponse {
                 print("Status Code: \(response.statusCode)")
             }
@@ -133,7 +131,7 @@ class WeekViewModel {
                 // Invoke Completion Handler
                 self?.didFetchWeatherData?(result)
             }
-        }.resume()
+        }
     }
     
     func setUp(weatherData: [WeatherData]) {
@@ -149,23 +147,18 @@ class WeekViewModel {
     // MARK: - Methods
     
     func numberOfDays(in section: Int) -> Int {
-        let cData = clubbedData?[section]
-        return cData?.hourly.count ?? 0
+        let cData = clubbedData[section]
+        return cData.hourly.count
     }
     
     func title(for section: Int) -> String {
-        let cData = clubbedData?[section]
-        return cData?.date ?? ""
+        let cData = clubbedData[section]
+        return cData.date
     }
     
     func viewModel(for index: Int, section: Int) -> WeekDayViewModel? {
-        guard let cData = clubbedData?[section] else {return nil}
+        let cData = clubbedData[section]
         return WeekDayViewModel(weatherData: cData.hourly[index])
     }
     
-}
-
-fileprivate struct ClubbedWeatherData {
-    let date: String
-    let hourly: [WeatherData]
 }

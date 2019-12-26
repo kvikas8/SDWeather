@@ -129,3 +129,8 @@ extension ForecastWeatherResponse: ForecastWeatherData {
         return forcasts
     }
 }
+
+struct ClubbedWeatherData {
+    let date: String
+    let hourly: [WeatherData]
+}
