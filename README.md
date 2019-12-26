@@ -1,3 +1,4 @@
+
 # SDWeather
 SDWeather is a Mobile Coding Test app to display the weather forecast for the current city for 5 days 3 hours in a list and current weather for the searched cities. It's a simple app developed using MVVM architecture.
 
@@ -8,6 +9,12 @@ Clone the app using below command and simply open the xcodeproj file to run the 
 ```bash
 git clone https://github.com/kvikas8/SDWeather.git
 ```
+## Testing
+- Unit test cases are written using XCTest.
+- All the view models have 100% coverage
+- Simply press **Command + U** or select **Product > Test** from Xcode Menu to run tests.
+- To see the code coverage report, run the test suite and open the **Report Navigator** on the left, select the report for the last test run, and open the **Coverage** tab at the top.
+- Below is the screenshot of latest **Coverage**
 
 ## Notes
 - App only support portrait mode for now.
