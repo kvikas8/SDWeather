@@ -21,6 +21,8 @@ git clone https://github.com/kvikas8/SDWeather.git
 - App is only tested in iOS (iPhone 11 Simulator) due to time constraint.
 - App will accept city one by one as of now. Support for accepting comma seperated cities is not developed due to time constraint.
 
+![ScreenShot](https://github.com/kvikas8/SDWeather/blob/stImages/Coverage.png)
+
 ## Needed Improvements
 - UIEnhancements
 - Proper Validation on entering cities.
