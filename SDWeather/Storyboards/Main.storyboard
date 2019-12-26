@@ -254,17 +254,35 @@
                                             <color key="textColor" white="0.33582589289999998" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgQ-Mz-hdX">
+                                            <rect key="frame" x="367" y="74.5" width="31" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.33582589289999998" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLz-iV-AHu">
+                                            <rect key="frame" x="16" y="74.5" width="31" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.33582589289999998" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="s8k-qu-MX1" firstAttribute="top" secondItem="QYd-JE-fz4" secondAttribute="top" constant="30" id="E42-jY-gRW"/>
                                         <constraint firstItem="wBY-IF-uj7" firstAttribute="leading" secondItem="QYd-JE-fz4" secondAttribute="leading" constant="16" id="K6l-9P-bQh"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="uLz-iV-AHu" secondAttribute="bottom" id="LbY-mK-Y5S"/>
                                         <constraint firstAttribute="trailing" secondItem="s8k-qu-MX1" secondAttribute="trailing" constant="16" id="U9y-o6-1uH"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="QgQ-Mz-hdX" secondAttribute="bottom" id="VaW-wH-HTb"/>
                                         <constraint firstItem="wBY-IF-uj7" firstAttribute="top" secondItem="QYd-JE-fz4" secondAttribute="top" constant="39" id="d3N-4n-Iju"/>
+                                        <constraint firstItem="uLz-iV-AHu" firstAttribute="leading" secondItem="QYd-JE-fz4" secondAttribute="leading" constant="16" id="qqr-0v-9aQ"/>
+                                        <constraint firstItem="QgQ-Mz-hdX" firstAttribute="trailing" secondItem="QYd-JE-fz4" secondAttribute="trailing" constant="-16" id="r3h-Sd-AQZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="cityNameLabel" destination="wBY-IF-uj7" id="jF5-Ox-BrR"/>
+                                    <outlet property="descriptionLabel" destination="uLz-iV-AHu" id="bdh-gn-Wav"/>
                                     <outlet property="temperatureLabel" destination="s8k-qu-MX1" id="n6n-v3-zJY"/>
+                                    <outlet property="windLabel" destination="QgQ-Mz-hdX" id="9L8-dG-SVo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

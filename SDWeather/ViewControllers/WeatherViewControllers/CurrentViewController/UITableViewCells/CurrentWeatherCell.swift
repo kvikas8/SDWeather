@@ -17,9 +17,13 @@ class CurrentWeatherCell: UITableViewCell {
     
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var windLabel: UILabel!
     
     func configure(with representable: WeekDayRepresentable) {
         cityNameLabel.text = representable.cityName
         temperatureLabel.text = representable.temperature
+        descriptionLabel.text = representable.description
+        windLabel.text = representable.windSpeed
     }
 }
