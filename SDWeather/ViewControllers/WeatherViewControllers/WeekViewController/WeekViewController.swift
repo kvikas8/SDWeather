@@ -64,6 +64,7 @@ class WeekViewController: UIViewController {
         
         // Setup View
         setupView()
+        viewModel?.fetchWeather()
     }
     
     // MARK: - View Methods
@@ -81,7 +82,7 @@ class WeekViewController: UIViewController {
         // Configure View Model
         viewModel.didFetchWeatherData = { [weak self] (result) in
             // Hide Activity Indicator View
-            DispatchQueue.main.sync {
+            DispatchQueue.main.async {
                 self?.activityIndicatorView.stopAnimating() }
             
             switch result {

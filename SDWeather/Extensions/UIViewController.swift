@@ -24,10 +24,10 @@ extension UIViewController {
         switch alertType {
         case .notAuthorizedToRequestLocation:
             title = "Unable to Fetch Weather Data for Your Location"
-            message = "Rainstorm is not authorized to access your current location. This means it's unable to show you the weather for your current location. You can grant Rainstorm access to your current location in the Settings application."
+            message = "SDWeather is not authorized to access your current location. This means it's unable to show you the weather for your current location. You can grant SDWeather access to your current location in the Settings application."
         case .failedToRequestLocation:
             title = "Unable to Fetch Weather Data for Your Location"
-            message = "Rainstorm is not able to fetch your current location due to a technical issue."
+            message = "SDWeather is not able to fetch your current location due to a technical issue."
         case .noWeatherDataAvailable:
             title = "Unable to Fetch Weather Data"
             message = "The application is unable to fetch weather data. Please make sure your device is connected over Wi-Fi or cellular."

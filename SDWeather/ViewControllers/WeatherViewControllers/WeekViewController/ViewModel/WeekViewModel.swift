@@ -35,14 +35,6 @@ class WeekViewModel {
     init(locationService: LocationService) {
         // Set Location Service
         self.locationService = locationService
-        
-        //  super.init()
-        
-        // Fetch Weather Data
-        fetchWeatherData(for: Defaults.location)
-        
-        // Fetch Location
-        fetchLocation()
     }
     
     init(weatherData: [WeatherData]) {
@@ -70,6 +62,15 @@ class WeekViewModel {
     }
     
     // MARK: - Helper Methods
+    
+    func fetchWeather() {
+        
+        // Fetch Weather Data
+           //    fetchWeatherData(for: Defaults.location)
+               
+            // Fetch Location
+               fetchLocation()
+    }
     
     private func fetchLocation() {
         locationService?.fetchLocation { [weak self] (result) in
