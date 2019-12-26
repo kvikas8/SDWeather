@@ -33,7 +33,7 @@ class WeekViewModel {
     // MARK: - Initialization
     
     init(networkService: NetworkService, locationService: LocationService) {
-    // Set Services
+        // Set Services
         self.networkService = networkService
         self.locationService = locationService
         
@@ -62,12 +62,7 @@ class WeekViewModel {
     // MARK: - Helper Methods
     
     func fetchWeather() {
-        
-        // Fetch Weather Data
-           //    fetchWeatherData(for: Defaults.location)
-               
-            // Fetch Location
-               fetchLocation()
+        fetchLocation()
     }
     
     private func fetchLocation() {

@@ -9,13 +9,13 @@
 import UIKit
 
 extension UIViewController {
-
+    
     // MARK: - Static Properties
-
+    
     static var storyboardIdentifier: String {
         return String(describing: self)
     }
-
+    
     func presentAlert(of alertType: AlertType) {
         // Helpers
         let title: String
@@ -34,14 +34,14 @@ extension UIViewController {
         }
         
         DispatchQueue.main.async {
-        // Initialize Alert Controller
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        // Add Cancel Action
-        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alertController.addAction(cancelAction)
-        
-        // Present Alert Controller
+            // Initialize Alert Controller
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            
+            // Add Cancel Action
+            let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(cancelAction)
+            
+            // Present Alert Controller
             self.present(alertController, animated: true)
         }
     }

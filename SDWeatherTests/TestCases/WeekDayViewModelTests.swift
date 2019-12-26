@@ -10,20 +10,20 @@ import XCTest
 @testable import SDWeather
 class WeekDayViewModelTests: XCTestCase {
     // MARK: - Properties
-
-       var viewModel: WeekDayViewModel!
+    
+    var viewModel: WeekDayViewModel!
     override func setUp() {
         let data = loadStub(name: "forecast", extension: "json")
         // Initialize JSON Decoder
         let decoder = JSONDecoder()
-
+        
         // Configure JSON Decoder
         decoder.dateDecodingStrategy = .secondsSince1970
-
+        
         // Initialize Dark Sky Response
         let weatherResponse = try! decoder.decode(ForecastWeatherResponse.self, from: data)
         viewModel = WeekDayViewModel(weatherData: weatherResponse.daily[0])    }
-
+    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
@@ -33,19 +33,19 @@ class WeekDayViewModelTests: XCTestCase {
     }
     
     func testDate() {
-          XCTAssertEqual(viewModel.date, "January 30")
-       }
+        XCTAssertEqual(viewModel.date, "January 30")
+    }
     
     func testTemprature() {
-           XCTAssertEqual(viewModel.temperature, "283.8 °F - 283.8 °F")
-       }
+        XCTAssertEqual(viewModel.temperature, "283.8 °F - 283.8 °F")
+    }
     
     func testWindSpeed() {
-            XCTAssertEqual(viewModel.windSpeed, "7 MPH")
-       }
+        XCTAssertEqual(viewModel.windSpeed, "7 MPH")
+    }
     
     func testDescription() {
-           XCTAssertEqual(viewModel.description, "clear sky")
-       }
+        XCTAssertEqual(viewModel.description, "clear sky")
+    }
     
 }

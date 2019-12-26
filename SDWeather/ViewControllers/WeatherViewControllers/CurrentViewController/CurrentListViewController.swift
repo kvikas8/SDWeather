@@ -88,8 +88,8 @@ class CurrentListViewController: UITableViewController, AddWeatherDelegate {
     private func prepareSegueForAddWeatherCityViewController(segue: UIStoryboardSegue) {
         
         guard let nav = segue.destination as? UINavigationController else {
-                   fatalError("NavigationController not found")
-               }
+            fatalError("NavigationController not found")
+        }
         
         guard let addWeatherCityVC = nav.viewControllers.first as? AddCityViewController else {
             fatalError("AddCityViewController not found")

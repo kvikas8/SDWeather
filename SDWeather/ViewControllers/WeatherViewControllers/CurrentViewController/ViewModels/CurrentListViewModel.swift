@@ -21,7 +21,7 @@ class CurrentListViewModel {
     
     // MARK: - Properties
     private let networkService: NetworkService?
-  
+    
     var didFetchWeatherData: CurrentWeatherDataCompletion?
     
     var workDayViewModels: [WeekDayViewModel] = []
@@ -34,7 +34,7 @@ class CurrentListViewModel {
     }
     
     func addWeatherViewModel(for city: String) {
-         fetchWeatherData(for: city)
+        fetchWeatherData(for: city)
     }
     
     private func fetchWeatherData(for city: String) {
@@ -42,7 +42,7 @@ class CurrentListViewModel {
         let weatherRequest = CurrentWeatherRequest.init(baseUrl: WeatherService.authenticatedCurrentBaseUrl, city: city)
         
         // Create Data Task
-         networkService?.fetchData(with: weatherRequest.url) { [weak self] (data, response, error) in
+        networkService?.fetchData(with: weatherRequest.url) { [weak self] (data, response, error) in
             if let response = response as? HTTPURLResponse {
                 print("Status Code: \(response.statusCode)")
             }
@@ -51,9 +51,9 @@ class CurrentListViewModel {
                 print("Unable to Fetch Weather Data \(error)")
                 
                 let result: CurrentWeatherDataResult = .failure(.noWeatherDataAvailable)
-
-                               // Invoke Completion Handler
-                               self?.didFetchWeatherData?(result)
+                
+                // Invoke Completion Handler
+                self?.didFetchWeatherData?(result)
             } else if let data = data {
                 // Initialize JSON Decoder
                 let decoder = JSONDecoder()
@@ -62,7 +62,7 @@ class CurrentListViewModel {
                     // Decode JSON Response
                     let weatherResponse = try decoder.decode(WeatherResponse.self, from: data)
                     // Invoke Completion Handler
-                   let result: CurrentWeatherDataResult = .success(weatherResponse)
+                    let result: CurrentWeatherDataResult = .success(weatherResponse)
                     self?.workDayViewModels.append(WeekDayViewModel(weatherData: weatherResponse))
                     // Invoke Completion Handler
                     self?.didFetchWeatherData?(result)
@@ -70,16 +70,16 @@ class CurrentListViewModel {
                     print("Unable to Decode JSON Response \(error)")
                     
                     // Invoke Completion Handler
-                   let result: CurrentWeatherDataResult = .failure(.noWeatherDataAvailable)
-
-                                   // Invoke Completion Handler
-                                   self?.didFetchWeatherData?(result)
+                    let result: CurrentWeatherDataResult = .failure(.noWeatherDataAvailable)
+                    
+                    // Invoke Completion Handler
+                    self?.didFetchWeatherData?(result)
                 }
             } else {
                 let result: CurrentWeatherDataResult = .failure(.noWeatherDataAvailable)
-
-                               // Invoke Completion Handler
-                               self?.didFetchWeatherData?(result)
+                
+                // Invoke Completion Handler
+                self?.didFetchWeatherData?(result)
             }
         }
     }

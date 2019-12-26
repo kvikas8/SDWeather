@@ -10,19 +10,19 @@ import Foundation
 @testable import SDWeather
 
 class MockLocationService: LocationService {
-
-    // MARK: - Properties
-
-    var location: Location? = Location(latitude: 0.0, longitude: 0.0)
-
-    // MARK: -
-
-    var delay: TimeInterval = 0.0
-
-    // MARK: - Location Service
-
-    func fetchLocation(completion: @escaping LocationService.FetchLocationCompletion) {
     
+    // MARK: - Properties
+    
+    var location: Location? = Location(latitude: 0.0, longitude: 0.0)
+    
+    // MARK: -
+    
+    var delay: TimeInterval = 0.0
+    
+    // MARK: - Location Service
+    
+    func fetchLocation(completion: @escaping LocationService.FetchLocationCompletion) {
+        
         // Create Result
         let result: LocationServiceResult
         
@@ -31,7 +31,7 @@ class MockLocationService: LocationService {
         } else {
             result = .failure(.notAuthorizedToRequestLocation)
         }
-
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             // Invoke Handler
             completion(result)
