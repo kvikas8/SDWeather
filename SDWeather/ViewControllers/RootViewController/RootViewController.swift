@@ -10,14 +10,10 @@ import UIKit
 
 final class RootViewController: UIViewController {
     
-    private let currentViewController: CurrentViewController = {
-        guard let currentViewController = UIStoryboard.main.instantiateViewController(withIdentifier: CurrentViewController.storyboardIdentifier) as? CurrentViewController else {
+    private let addcityViewController: CurrentListViewController = {
+        guard let currentViewController = UIStoryboard.main.instantiateViewController(withIdentifier: CurrentListViewController.storyboardIdentifier) as? CurrentListViewController else {
             fatalError("Unable to Instantiate Current View Controller")
         }
-        
-        // Configure Current View Controller
-        currentViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        
         return currentViewController
     }()
     
@@ -25,7 +21,7 @@ final class RootViewController: UIViewController {
         guard let weekViewController = UIStoryboard.main.instantiateViewController(withIdentifier: WeekViewController.storyboardIdentifier) as? WeekViewController else {
             fatalError("Unable to Instantiate Week View Controller")
         }
-        
+       
         return weekViewController
     }()
     
@@ -38,6 +34,10 @@ final class RootViewController: UIViewController {
     }
     
     @IBAction func step1(_ sender: Any) {
+        let currentListViewModel = CurrentListViewModel()
+               // Configure Week View Controller
+        addcityViewController.currentListViewModel = currentListViewModel
+         self.navigationController?.pushViewController(addcityViewController, animated: true)
     }
     
     @IBAction func step2(_ sender: Any) {

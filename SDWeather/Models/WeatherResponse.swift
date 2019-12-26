@@ -51,6 +51,7 @@ struct WeatherResponse {
     let temperatureMin: Double
     let humidity: Double
     let windSpeed: Double
+    let city: String
 
     
     private enum CodingKeys: String, CodingKey {
@@ -58,6 +59,7 @@ struct WeatherResponse {
         case main
         case weather
         case wind
+        case city = "name"
     }
     
     enum MainKeys: String, CodingKey {
@@ -65,6 +67,7 @@ struct WeatherResponse {
         case temperatureMin = "temp_min"
         case temperatureMax = "temp_max"
         case humidity
+        
     }
     
     enum WeatherKeys: String, CodingKey {
@@ -85,6 +88,7 @@ extension WeatherResponse: Decodable {
         
         let values = try decoder.container(keyedBy: CodingKeys.self)
         date = try values.decodeIfPresent(Date.self, forKey: .date) ?? Date()
+        city = try values.decodeIfPresent(String.self, forKey: .city) ?? ""
 
         let mainValues = try values.nestedContainer(keyedBy: MainKeys.self, forKey: .main)
         temperature = try mainValues.decodeIfPresent(Double.self, forKey: .temperature) ?? 0.0

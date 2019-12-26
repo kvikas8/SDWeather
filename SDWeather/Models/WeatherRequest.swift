@@ -8,7 +8,14 @@
 
 import Foundation
 
-struct WeatherRequest {
+protocol WeatherRequest {
+    var baseUrl: URL { get }
+    // MARK: -
+    
+    var url: URL { get }
+}
+
+struct ForeCastWeatherRequest: WeatherRequest {
     
     // MARK: - Properties
     
@@ -33,5 +40,22 @@ struct WeatherRequest {
     var url: URL {
         return baseUrl.appending("lat", value: "\(latitude)").appending("lon", value: "\(longitude)")
     }
+}
+
+struct CurrentWeatherRequest: WeatherRequest {
     
+    // MARK: - Properties
+    
+    let baseUrl: URL
+    
+    // MARK: -
+    
+    let city: String
+    
+    
+    // MARK: -
+    
+    var url: URL {
+        return baseUrl.appending("q", value: city)
+    }
 }

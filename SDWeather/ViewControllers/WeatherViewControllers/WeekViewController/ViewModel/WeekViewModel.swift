@@ -89,7 +89,7 @@ class WeekViewModel {
     
    private func fetchWeatherData(for location: Location) {
         // Initialize Weather Request
-        let weatherRequest = WeatherRequest(baseUrl: WeatherService.authenticatedBaseUrl, location: Defaults.location)
+        let weatherRequest = ForeCastWeatherRequest(baseUrl: WeatherService.authenticatedForcastBaseUrl, location: Defaults.location)
         
         // Create Data Task
         URLSession.shared.dataTask(with: weatherRequest.url) { [weak self] (data, response, error) in

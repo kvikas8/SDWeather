@@ -15,5 +15,6 @@ protocol WeekDayRepresentable {
     var temperature: String { get }
     var windSpeed: String { get }
     var description: String { get }
+    var cityName: String { get }
     
 }

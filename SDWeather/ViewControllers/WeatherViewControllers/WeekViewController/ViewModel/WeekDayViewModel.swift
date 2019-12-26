@@ -48,6 +48,10 @@ struct WeekDayViewModel {
     var description: String {
         return weatherData.description
     }
+    
+    var cityName: String {
+           return weatherData.city
+       }
 }
 
 extension WeekDayViewModel: WeekDayRepresentable {

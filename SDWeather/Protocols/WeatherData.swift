@@ -16,6 +16,7 @@ protocol WeatherData {
     var time: Date { get }
     var simplifiedDate: String { get }
     var description: String { get }
+    var city: String { get }
 }
   
 protocol ForecastWeatherData {
