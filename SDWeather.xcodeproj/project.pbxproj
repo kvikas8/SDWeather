@@ -150,11 +150,11 @@
 		4E2D4B6E23B394DA005087F4 /* SDWeather */ = {
 			isa = PBXGroup;
 			children = (
+				4E2D4B8323B39523005087F4 /* ApplicationDelegate */,
 				4E2D4BE023B468F6005087F4 /* Managers */,
 				4E2D4BB023B3DCC5005087F4 /* Protocols */,
 				4E2D4BA623B3B38E005087F4 /* Configuration */,
 				4E2D4BA323B3B34A005087F4 /* Models */,
-				4E2D4B8323B39523005087F4 /* ApplicationDelegate */,
 				4E2D4B8423B395FD005087F4 /* ViewControllers */,
 				4E2D4B8823B3971A005087F4 /* Storyboards */,
 				4E2D4B8923B3972F005087F4 /* Resources */,
@@ -238,10 +238,10 @@
 		4E2D4B9923B3A0BD005087F4 /* WeekViewController */ = {
 			isa = PBXGroup;
 			children = (
-				4E2D4B9C23B3A2A0005087F4 /* WeekViewController.swift */,
 				4E2D4BBD23B3FF52005087F4 /* TableViewCells */,
 				4E2D4BBA23B3FEDC005087F4 /* Protocols */,
 				4E2D4BB323B3F0E9005087F4 /* ViewModel */,
+				4E2D4B9C23B3A2A0005087F4 /* WeekViewController.swift */,
 			);
 			path = WeekViewController;
 			sourceTree = "<group>";
