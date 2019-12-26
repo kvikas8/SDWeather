@@ -15,6 +15,7 @@ git clone https://github.com/kvikas8/SDWeather.git
 - App will accept city one by one as of now. Support for accepting comma seperated cities is not developed due to time constraint.
 
 ## Needed Improvements
+- UIEnhancements
 - Proper Validation on entering cities.
 - Error handling with proper error messages.
 - Localizable strings
