@@ -14,7 +14,7 @@ class LocationManager: NSObject, LocationService {
     // MARK: - Properties
     
     private var didFetchLocation: FetchLocationCompletion?
-
+    
     // MARK: -
     
     private lazy var locationManager: CLLocationManager = {
@@ -59,16 +59,16 @@ extension LocationManager: CLLocationManagerDelegate {
             didFetchLocation = nil
         }
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else {
             return
         }
         
         // Invoke Completion Handler
-       // Location Service Result
+        // Location Service Result
         let result: LocationServiceResult = .success(Location(location: location))
-
+        
         // Invoke Completion Handler
         didFetchLocation?(result)
         

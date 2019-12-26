@@ -8,16 +8,16 @@
 
 import UIKit
 
-   // MARK: - Types
+// MARK: - Types
 
 enum AlertType {
-         case notAuthorizedToRequestLocation
-         case failedToRequestLocation
-         case noWeatherDataAvailable
-     }
+    case notAuthorizedToRequestLocation
+    case failedToRequestLocation
+    case noWeatherDataAvailable
+}
 
 class WeekViewController: UIViewController {
-   
+    
     // MARK: - Properties
     
     var viewModel: WeekViewModel? {
@@ -87,13 +87,13 @@ class WeekViewController: UIViewController {
             switch result {
             case .success(_):
                 DispatchQueue.main.sync {
-                                   // Update Table View
-                                   self?.tableView.reloadData()
-                                   self?.tableView.isHidden = false
-                               }
+                    // Update Table View
+                    self?.tableView.reloadData()
+                    self?.tableView.isHidden = false
+                }
             case .failure(let error):
                 let alertType: AlertType
-
+                
                 switch error {
                 case .notAuthorizedToRequestLocation:
                     alertType = .notAuthorizedToRequestLocation
@@ -102,7 +102,7 @@ class WeekViewController: UIViewController {
                 case .noWeatherDataAvailable:
                     alertType = .noWeatherDataAvailable
                 }
-
+                
                 // Notify User
                 self?.presentAlert(of: alertType)
             }

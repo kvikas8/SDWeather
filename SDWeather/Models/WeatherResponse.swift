@@ -9,11 +9,11 @@
 import Foundation
 
 struct ForecastWeatherResponse {
-
+    
     let cityName: String
     let country: String
     fileprivate let forcasts: [WeatherResponse]
-     
+    
     
     private enum CodingKeys: String, CodingKey {
         case city
@@ -52,7 +52,7 @@ struct WeatherResponse {
     let humidity: Double
     let windSpeed: Double
     let city: String
-
+    
     
     private enum CodingKeys: String, CodingKey {
         case date = "dt"
@@ -89,15 +89,15 @@ extension WeatherResponse: Decodable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         date = try values.decodeIfPresent(Date.self, forKey: .date) ?? Date()
         city = try values.decodeIfPresent(String.self, forKey: .city) ?? ""
-
+        
         let mainValues = try values.nestedContainer(keyedBy: MainKeys.self, forKey: .main)
         temperature = try mainValues.decodeIfPresent(Double.self, forKey: .temperature) ?? 0.0
         temperatureMin = try mainValues.decodeIfPresent(Double.self, forKey: .temperatureMin) ?? 0.0
         temperatureMax = try mainValues.decodeIfPresent(Double.self, forKey: .temperatureMax) ?? 0.0
         humidity = try mainValues.decodeIfPresent(Double.self, forKey: .humidity) ?? 0.0
-     
+        
         var weatherValues = try values.nestedUnkeyedContainer(forKey:.weather)
-
+        
         while (!weatherValues.isAtEnd) {
             let weatherInfo = try weatherValues.nestedContainer(keyedBy: WeatherKeys.self)
             description = try weatherInfo.decodeIfPresent(String.self, forKey: .description) ?? ""

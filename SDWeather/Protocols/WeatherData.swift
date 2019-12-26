@@ -18,7 +18,7 @@ protocol WeatherData {
     var description: String { get }
     var city: String { get }
 }
-  
+
 protocol ForecastWeatherData {
-     var daily: [WeatherData] { get }
+    var daily: [WeatherData] { get }
 }

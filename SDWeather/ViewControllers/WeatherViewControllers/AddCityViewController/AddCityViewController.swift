@@ -11,17 +11,17 @@ protocol AddWeatherDelegate {
     func addWeatherDidSave(newCityName: String)
 }
 class AddCityViewController: UIViewController {
-
-     // MARK: - View Life Cycle
+    
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        
     }
     
     // MARK: - Properties
-     @IBOutlet weak var cityNameTextField: UITextField!
+    @IBOutlet weak var cityNameTextField: UITextField!
     
-     var delegate: AddWeatherDelegate?
+    var delegate: AddWeatherDelegate?
     
     // MARK: - Actions
     

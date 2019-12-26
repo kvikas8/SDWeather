@@ -22,7 +22,7 @@ class CurrentListViewController: UITableViewController, AddWeatherDelegate {
     // MARK: - Properties
     var cityName: String?
     
-     var currentListViewModel: CurrentListViewModel? {
+    var currentListViewModel: CurrentListViewModel? {
         didSet {
             if let viewModel = currentListViewModel {
                 // Setup View Model
@@ -44,19 +44,19 @@ class CurrentListViewController: UITableViewController, AddWeatherDelegate {
         // Configure View Model
         viewModel.didFetchWeatherData = { [weak self] (result) in
             // Hide Activity Indicator View
-//            DispatchQueue.main.sync {
-//                self?.activityIndicatorView.stopAnimating() }
+            //            DispatchQueue.main.sync {
+            //                self?.activityIndicatorView.stopAnimating() }
             
             switch result {
             case .success(_):
                 DispatchQueue.main.sync {
-                                   // Update Table View
-                                   self?.tableView.reloadData()
-                                   self?.tableView.isHidden = false
-                               }
+                    // Update Table View
+                    self?.tableView.reloadData()
+                    self?.tableView.isHidden = false
+                }
             case .failure(let error):
                 let alertType: AlertType
-
+                
                 switch error {
                 case .notAuthorizedToRequestLocation:
                     alertType = .notAuthorizedToRequestLocation
@@ -65,7 +65,7 @@ class CurrentListViewController: UITableViewController, AddWeatherDelegate {
                 case .noWeatherDataAvailable:
                     alertType = .noWeatherDataAvailable
                 }
-
+                
                 // Notify User
                 self?.presentAlert(of: alertType)
             }
@@ -79,14 +79,14 @@ class CurrentListViewController: UITableViewController, AddWeatherDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           
-           if segue.identifier == "AddCityViewController" {
-               
-               prepareSegueForAddWeatherCityViewController(segue: segue)
-               
-           }
-          
-       }
+        
+        if segue.identifier == "AddCityViewController" {
+            
+            prepareSegueForAddWeatherCityViewController(segue: segue)
+            
+        }
+        
+    }
     
     private func prepareSegueForAddWeatherCityViewController(segue: UIStoryboardSegue) {
         
@@ -113,8 +113,8 @@ class CurrentListViewController: UITableViewController, AddWeatherDelegate {
         
         // Configure Cell
         guard let wData = currentListViewModel?.modelAt(indexPath.row) else { return cell }
-            cell.configure(with: wData)
-      
+        cell.configure(with: wData)
+        
         return cell
     }
     

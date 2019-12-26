@@ -205,9 +205,9 @@
 		4E2D4B9823B3A0AB005087F4 /* CurrentViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4E2D4BE323B4778B005087F4 /* ViewModels */,
 				4E2D4BE923B47CC9005087F4 /* UITableViewCells */,
 				4E2D4B9A23B3A290005087F4 /* CurrentListViewController.swift */,
-				4E2D4BE323B4778B005087F4 /* ViewModels */,
 			);
 			path = CurrentViewController;
 			sourceTree = "<group>";

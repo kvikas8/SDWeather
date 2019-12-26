@@ -70,5 +70,5 @@ class WeekDayTableViewCell: UITableViewCell {
         windSpeedLabel.text = representable.windSpeed
         temperatureLabel.text = representable.temperature
     }
-
+    
 }

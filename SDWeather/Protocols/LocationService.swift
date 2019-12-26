@@ -20,7 +20,7 @@ protocol LocationService {
     
     // MARK: - Type Aliases
     
-   typealias FetchLocationCompletion = (LocationServiceResult) -> Void
+    typealias FetchLocationCompletion = (LocationServiceResult) -> Void
     
     // MARK: - Methods
     

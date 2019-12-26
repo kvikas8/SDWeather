@@ -21,7 +21,7 @@ final class RootViewController: UIViewController {
         guard let weekViewController = UIStoryboard.main.instantiateViewController(withIdentifier: WeekViewController.storyboardIdentifier) as? WeekViewController else {
             fatalError("Unable to Instantiate Week View Controller")
         }
-       
+        
         return weekViewController
     }()
     
@@ -35,9 +35,9 @@ final class RootViewController: UIViewController {
     
     @IBAction func step1(_ sender: Any) {
         let currentListViewModel = CurrentListViewModel()
-               // Configure Week View Controller
+        // Configure Week View Controller
         addcityViewController.currentListViewModel = currentListViewModel
-         self.navigationController?.pushViewController(addcityViewController, animated: true)
+        self.navigationController?.pushViewController(addcityViewController, animated: true)
     }
     
     @IBAction func step2(_ sender: Any) {

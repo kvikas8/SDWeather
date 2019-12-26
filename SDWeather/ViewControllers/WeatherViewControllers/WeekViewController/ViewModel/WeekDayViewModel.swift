@@ -17,7 +17,7 @@ struct WeekDayViewModel {
     // MARK: -
     
     private let dateFormatter = DateFormatter()
-
+    
     // MARK: -
     
     var day: String {
@@ -50,8 +50,8 @@ struct WeekDayViewModel {
     }
     
     var cityName: String {
-           return weatherData.city
-       }
+        return weatherData.city
+    }
 }
 
 extension WeekDayViewModel: WeekDayRepresentable {
