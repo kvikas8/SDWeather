@@ -14,6 +14,7 @@ enum AlertType {
     case notAuthorizedToRequestLocation
     case failedToRequestLocation
     case noWeatherDataAvailable
+    case dataNotAvailableForAllCities
 }
 
 class WeekViewController: UIViewController {
@@ -87,7 +88,7 @@ class WeekViewController: UIViewController {
             
             switch result {
             case .success(_):
-                DispatchQueue.main.sync {
+                DispatchQueue.main.async {
                     // Update Table View
                     self?.tableView.reloadData()
                     self?.tableView.isHidden = false

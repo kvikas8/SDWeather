@@ -9,21 +9,7 @@
 import UIKit
 
 final class RootViewController: UIViewController {
-    
-    private let addcityViewController: CurrentListViewController = {
-        guard let currentViewController = UIStoryboard.main.instantiateViewController(withIdentifier: CurrentListViewController.storyboardIdentifier) as? CurrentListViewController else {
-            fatalError("Unable to Instantiate Current View Controller")
-        }
-        return currentViewController
-    }()
-    
-    private let weekViewController: WeekViewController = {
-        guard let weekViewController = UIStoryboard.main.instantiateViewController(withIdentifier: WeekViewController.storyboardIdentifier) as? WeekViewController else {
-            fatalError("Unable to Instantiate Week View Controller")
-        }
-        
-        return weekViewController
-    }()
+  
     
     // MARK: - View Life Cycle
     
@@ -34,6 +20,9 @@ final class RootViewController: UIViewController {
     }
     
     @IBAction func step1(_ sender: Any) {
+        guard let addcityViewController = UIStoryboard.main.instantiateViewController(withIdentifier: CurrentListViewController.storyboardIdentifier) as? CurrentListViewController else {
+                  fatalError("Unable to Instantiate Current View Controller")
+              }
         let currentListViewModel = CurrentListViewModel(networkService: NetworkManager())
         // Configure Week View Controller
         addcityViewController.currentListViewModel = currentListViewModel
@@ -41,6 +30,9 @@ final class RootViewController: UIViewController {
     }
     
     @IBAction func step2(_ sender: Any) {
+        guard let weekViewController = UIStoryboard.main.instantiateViewController(withIdentifier: WeekViewController.storyboardIdentifier) as? WeekViewController else {
+                   fatalError("Unable to Instantiate Week View Controller")
+               }
         let weekViewModel = WeekViewModel(networkService: NetworkManager(), locationService: LocationManager())
         
         // Configure Week View Controller

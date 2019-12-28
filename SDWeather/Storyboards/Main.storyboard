@@ -186,18 +186,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pGE-lg-qVm">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dubai,London,Cupertino" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pGE-lg-qVm">
                                 <rect key="frame" x="20" y="87" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="EMl-Zb-ugY" id="A3o-1J-E7a"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXa-5j-Frm">
-                                <rect key="frame" x="170" y="129" width="74" height="30"/>
+                                <rect key="frame" x="170" y="145" width="74" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveCityButtonPressed" destination="EMl-Zb-ugY" eventType="touchUpInside" id="0kP-RU-sBm"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Emg-Up-1f4">
+                                <rect key="frame" x="20" y="131" width="374" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -205,8 +214,11 @@
                             <constraint firstItem="pGE-lg-qVm" firstAttribute="centerX" secondItem="tXa-5j-Frm" secondAttribute="centerX" id="3YS-c0-lcg"/>
                             <constraint firstItem="tXa-5j-Frm" firstAttribute="leading" secondItem="Aig-ka-faR" secondAttribute="leading" constant="170" id="3Z8-6f-9Mw"/>
                             <constraint firstItem="pGE-lg-qVm" firstAttribute="top" secondItem="Aig-ka-faR" secondAttribute="top" constant="31" id="BvS-dL-bVM"/>
+                            <constraint firstItem="Emg-Up-1f4" firstAttribute="top" secondItem="pGE-lg-qVm" secondAttribute="bottom" constant="10" id="FgR-cU-vzV"/>
+                            <constraint firstItem="Emg-Up-1f4" firstAttribute="leading" secondItem="pGE-lg-qVm" secondAttribute="leading" id="KVI-3X-l9s"/>
+                            <constraint firstItem="Emg-Up-1f4" firstAttribute="width" secondItem="pGE-lg-qVm" secondAttribute="width" id="LDm-Cm-SHw"/>
+                            <constraint firstItem="tXa-5j-Frm" firstAttribute="top" secondItem="Emg-Up-1f4" secondAttribute="bottom" constant="14" id="S8h-9Q-jaK"/>
                             <constraint firstItem="pGE-lg-qVm" firstAttribute="leading" secondItem="2Je-qj-quN" secondAttribute="leadingMargin" id="kQV-qr-OrL"/>
-                            <constraint firstItem="tXa-5j-Frm" firstAttribute="top" secondItem="pGE-lg-qVm" secondAttribute="bottom" constant="8" symbolic="YES" id="xao-3p-wZ0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Aig-ka-faR"/>
                     </view>
@@ -220,6 +232,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="cityNameTextField" destination="pGE-lg-qVm" id="s6k-as-0fI"/>
+                        <outlet property="errorLabel" destination="Emg-Up-1f4" id="h56-kM-5IW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qA8-v2-yIv" userLabel="First Responder" sceneMemberID="firstResponder"/>

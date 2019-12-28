@@ -28,19 +28,20 @@ class CurrentListViewModelAsyncTests: XCTestCase {
     func testFetchingForCitySuccess() {
         // Define Expectation
         let expectation = XCTestExpectation(description: "Fetch Weather Data")
-        
+        var successCount = 0
         // Install Handler
         viewModel.didFetchWeatherData = { (result) in
             if case .success(let weatherData) = result {
-                print(weatherData)
+                successCount += 1
                 XCTAssertEqual(weatherData.city, "London")
+                if successCount == 3 {
                 // Fulfill Expectation
-                expectation.fulfill()
+                    expectation.fulfill() }
             }
         }
         
         // Invoke Method Under Test
-        viewModel.addWeatherViewModel(for: "London")
+        viewModel.addWeatherViewModel(for: ["London","London","London"])
         
         // Wait for Expectation to Be Fulfilled
         wait(for: [expectation], timeout: 2.0)
@@ -63,7 +64,7 @@ class CurrentListViewModelAsyncTests: XCTestCase {
         }
         
         // Invoke Method Under Test
-        viewModel.addWeatherViewModel(for: "London")
+        viewModel.addWeatherViewModel(for: ["London","London","London"])
         
         // Wait for Expectation to Be Fulfilled
         wait(for: [expectation], timeout: 2.0)
@@ -86,7 +87,7 @@ class CurrentListViewModelAsyncTests: XCTestCase {
         }
         
         // Invoke Method Under Test
-        viewModel.addWeatherViewModel(for: "London")
+         viewModel.addWeatherViewModel(for: ["London","London","London"])
         
         // Wait for Expectation to Be Fulfilled
         wait(for: [expectation], timeout: 2.0)
@@ -109,7 +110,7 @@ class CurrentListViewModelAsyncTests: XCTestCase {
         }
         
         // Invoke Method Under Test
-        viewModel.addWeatherViewModel(for: "London")
+         viewModel.addWeatherViewModel(for: ["London","London","London"])
         
         // Wait for Expectation to Be Fulfilled
         wait(for: [expectation], timeout: 2.0)

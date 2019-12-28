@@ -45,6 +45,8 @@
 		4E2D4BEB23B47CFC005087F4 /* CurrentWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BEA23B47CFC005087F4 /* CurrentWeatherCell.swift */; };
 		4E2D4BF023B4A45D005087F4 /* CurrentListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2D4BEF23B4A45D005087F4 /* CurrentListViewModelTest.swift */; };
 		4E2D4BF223B4A584005087F4 /* current.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E2D4BF123B4A584005087F4 /* current.json */; };
+		4E3FDE1B23B733FE00F44693 /* AddCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FDE1A23B733FE00F44693 /* AddCityViewModel.swift */; };
+		4E3FDE1D23B745AB00F44693 /* AddCityViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FDE1C23B745AB00F44693 /* AddCityViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		4E2D4BEA23B47CFC005087F4 /* CurrentWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherCell.swift; sourceTree = "<group>"; };
 		4E2D4BEF23B4A45D005087F4 /* CurrentListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentListViewModelTest.swift; sourceTree = "<group>"; };
 		4E2D4BF123B4A584005087F4 /* current.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = current.json; sourceTree = "<group>"; };
+		4E3FDE1A23B733FE00F44693 /* AddCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewModel.swift; sourceTree = "<group>"; };
+		4E3FDE1C23B745AB00F44693 /* AddCityViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +342,7 @@
 				4E2D4BEF23B4A45D005087F4 /* CurrentListViewModelTest.swift */,
 				4E08F31723B51D020048E5A5 /* WeekViewModelAsyncTests.swift */,
 				4E08F31F23B536FA0048E5A5 /* CurrentListViewModelAsyncTests.swift */,
+				4E3FDE1C23B745AB00F44693 /* AddCityViewModelTests.swift */,
 			);
 			path = TestCases;
 			sourceTree = "<group>";
@@ -380,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				4E2D4BE723B47949005087F4 /* AddCityViewController.swift */,
+				4E3FDE1923B733D600F44693 /* ViewModels */,
 			);
 			path = AddCityViewController;
 			sourceTree = "<group>";
@@ -390,6 +396,14 @@
 				4E2D4BEA23B47CFC005087F4 /* CurrentWeatherCell.swift */,
 			);
 			path = UITableViewCells;
+			sourceTree = "<group>";
+		};
+		4E3FDE1923B733D600F44693 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4E3FDE1A23B733FE00F44693 /* AddCityViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,6 +513,7 @@
 				4E2D4BA523B3B368005087F4 /* WeatherRequest.swift in Sources */,
 				4E2D4B9D23B3A2A0005087F4 /* WeekViewController.swift in Sources */,
 				4E2D4BDF23B4688A005087F4 /* LocationService.swift in Sources */,
+				4E3FDE1B23B733FE00F44693 /* AddCityViewModel.swift in Sources */,
 				4E2D4B9B23B3A290005087F4 /* CurrentListViewController.swift in Sources */,
 				4E2D4BE523B477A5005087F4 /* CurrentListViewModel.swift in Sources */,
 				4E08F31A23B521660048E5A5 /* NetworkService.swift in Sources */,
@@ -533,6 +548,7 @@
 				4E08F31423B511930048E5A5 /* MockLocationService.swift in Sources */,
 				4E08F32023B536FA0048E5A5 /* CurrentListViewModelAsyncTests.swift in Sources */,
 				4E2D4BDB23B460C1005087F4 /* WeekDayViewModelTests.swift in Sources */,
+				4E3FDE1D23B745AB00F44693 /* AddCityViewModelTests.swift in Sources */,
 				4E08F31823B51D020048E5A5 /* WeekViewModelAsyncTests.swift in Sources */,
 				4E2D4BD923B45762005087F4 /* WeekViewModelTests.swift in Sources */,
 				4E2D4BD523B45669005087F4 /* XCTest.swift in Sources */,
@@ -669,6 +685,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WU73A9HWME;
 				INFOPLIST_FILE = SDWeather/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -687,6 +704,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WU73A9HWME;
 				INFOPLIST_FILE = SDWeather/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -706,6 +724,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WU73A9HWME;
 				INFOPLIST_FILE = SDWeatherTests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -727,6 +746,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WU73A9HWME;
 				INFOPLIST_FILE = SDWeatherTests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -45,21 +45,18 @@ class CurrentListViewController: UITableViewController, AddWeatherDelegate {
         viewModel.didFetchWeatherData = { [weak self] (result) in
             switch result {
             case .success(_):
-                DispatchQueue.main.sync {
+                DispatchQueue.main.async {
                     // Update Table View
                     self?.tableView.reloadData()
                     self?.tableView.isHidden = false
                 }
             case .failure(let error):
                 let alertType: AlertType
-                
                 switch error {
-                case .notAuthorizedToRequestLocation:
-                    alertType = .notAuthorizedToRequestLocation
-                case .failedToRequestLocation:
-                    alertType = .failedToRequestLocation
                 case .noWeatherDataAvailable:
-                    alertType = .noWeatherDataAvailable
+                    alertType = .dataNotAvailableForAllCities
+                default:
+                    alertType = .dataNotAvailableForAllCities
                 }
                 
                 // Notify User
@@ -70,8 +67,8 @@ class CurrentListViewController: UITableViewController, AddWeatherDelegate {
         
     }
     
-    func addWeatherDidSave(newCityName: String) {
-        self.currentListViewModel?.addWeatherViewModel(for: newCityName)
+   func addWeatherDidSave(cities: [String]) {
+        self.currentListViewModel?.addWeatherViewModel(for: cities)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -94,7 +91,7 @@ class CurrentListViewController: UITableViewController, AddWeatherDelegate {
         guard let addWeatherCityVC = nav.viewControllers.first as? AddCityViewController else {
             fatalError("AddCityViewController not found")
         }
-        
+        addWeatherCityVC.viewModel = AddCityViewModel()
         addWeatherCityVC.delegate = self
         
     }

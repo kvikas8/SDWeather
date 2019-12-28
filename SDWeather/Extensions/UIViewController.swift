@@ -31,6 +31,10 @@ extension UIViewController {
         case .noWeatherDataAvailable:
             title = "Unable to Fetch Weather Data"
             message = "The application is unable to fetch weather data. Please make sure your device is connected over Wi-Fi or cellular."
+        case .dataNotAvailableForAllCities:
+            title = "Unable to Fetch Weather Data for some or all the entered cities"
+            message = "The application is unable to fetch weather data for some or all the entered cities. Please make sure your device is connected over Wi-Fi or cellular."
+            
         }
         
         DispatchQueue.main.async {
