@@ -23,11 +23,9 @@ git clone https://github.com/kvikas8/SDWeather.git
 ## Notes
 - App only support portrait mode for now.
 - App is only tested in iOS (iPhone 11 Simulator) due to time constraint.
-- App will accept city one by one as of now. Support for accepting comma seperated cities is not developed yet due to time constraint.
 
 ## Needed Improvements
 - UIEnhancements
-- Proper Validation on entering cities.
 - Error handling with proper error messages.
 - Localizable strings
 - Proper comments in the code to make it more understandable.
